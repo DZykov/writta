@@ -1,32 +1,39 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-bf1a64d1eafd2816.js",
-      "static/chunks/fd9d1056-e4abb10dc68a7173.js",
-      "static/chunks/864-4a979332dff86894.js",
-      "static/chunks/main-app-3b2ba65b87f74df4.js",
-      "static/chunks/app/_not-found-be6954023b538636.js"
-    ],
     "/layout": [
-      "static/chunks/webpack-bf1a64d1eafd2816.js",
-      "static/chunks/fd9d1056-e4abb10dc68a7173.js",
-      "static/chunks/864-4a979332dff86894.js",
-      "static/chunks/main-app-3b2ba65b87f74df4.js",
-      "static/chunks/app/layout-e518c2ae0287673f.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layout.js"
     ],
-    "/page": [
-      "static/chunks/webpack-bf1a64d1eafd2816.js",
-      "static/chunks/fd9d1056-e4abb10dc68a7173.js",
-      "static/chunks/864-4a979332dff86894.js",
-      "static/chunks/main-app-3b2ba65b87f74df4.js",
-      "static/chunks/app/page-578d474dc6a9f369.js"
+    "/r/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/r/[id]/page.js"
     ],
-    "/pages/page": [
-      "static/chunks/webpack-bf1a64d1eafd2816.js",
-      "static/chunks/fd9d1056-e4abb10dc68a7173.js",
-      "static/chunks/864-4a979332dff86894.js",
-      "static/chunks/main-app-3b2ba65b87f74df4.js",
-      "static/chunks/app/pages/page-75cdc2d36b700508.js"
+    "/r/[id]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/r/[id]/layout.js"
+    ],
+    "/[treasure]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[treasure]/page.js"
+    ],
+    "/[treasure]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[treasure]/layout.js"
+    ],
+    "/rv/[id]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/rv/[id]/layout.js"
+    ],
+    "/rv/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/rv/[id]/page.js"
     ]
   }
 }
