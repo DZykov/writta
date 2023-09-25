@@ -10,15 +10,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
-    "/[treasure]/layout": [
+    "/(public)/demo/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[treasure]/layout.js"
+      "static/chunks/app/(public)/demo/page.js"
     ],
-    "/[treasure]/page": [
+    "/(public)/demo/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[treasure]/page.js"
+      "static/chunks/app/(public)/demo/layout.js"
     ]
   }
 }
