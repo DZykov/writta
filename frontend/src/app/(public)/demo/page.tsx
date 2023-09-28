@@ -2,8 +2,8 @@
 
 import sanitizeHtml from "sanitize-html"
 import ContentEditable from 'react-contenteditable';
-import Script from 'next/script'
-import { createRef, useCallback, useEffect, useRef, useState } from "react";
+import { createRef, useEffect, useRef, useState } from "react";
+import PopupInput from "@/components/popupInput/popupInput";
 
 
 export default function Demo() {
@@ -14,7 +14,9 @@ export default function Demo() {
     const [fontSize, setFontSize] = useState("Medium");
     const [fontName, setFontName] = useState("sans-serif");
 
-    // const contentArea = createRef<HTMLElement>();
+    const [linkModal, setLinkModal] = useState(false);
+    var linkRef = "";
+
     const fontSizeSymbol = "12px";
     const heightSymbol = "15px";
 
@@ -35,8 +37,9 @@ export default function Demo() {
                 "code"],
             allowedAttributes: { a: ["href", "face", "size", "color", "style", "align"] }
         };
-        console.log(content)
+        // console.log(content)
         // console.log(document.queryCommandSupported("fontName"))
+        console.log(linkRef)
         setContent(evt.currentTarget.innerHTML)
     }
 
@@ -44,6 +47,8 @@ export default function Demo() {
         return (
             <>
                 <div className="sticky my-5 top-5 p-1 z-50 bg-indigo-50 rounded-md border">
+                    {// text styles
+                    }
                     <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm my-2 mr-2">
                         <CmdButton cmd="bold" ui={false} arg=""
                             icon={<div className="font-bold" style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"B"}</div>}
@@ -62,6 +67,8 @@ export default function Demo() {
                         />
                     </span>
 
+                    {// lists
+                    }
                     <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm my-2 mr-2">
                         <CmdButton cmd="insertUnorderedList" ui={false} arg=""
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"•"}</div>}
@@ -72,6 +79,8 @@ export default function Demo() {
                         />
                     </span>
 
+                    {// text position
+                    }
                     <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm my-2 mr-2">
                         <CmdButton cmd="justifyLeft" ui={false} arg=""
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"|="}</div>}
@@ -90,6 +99,8 @@ export default function Demo() {
                         />
                     </span>
 
+                    {// text headings
+                    }
                     <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm my-2 mr-2">
                         <CmdButton cmd="formatBlock" ui={false} arg="<H1>"
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"H1"}</div>}
@@ -104,6 +115,8 @@ export default function Demo() {
                         />
                     </span>
 
+                    {// functions
+                    }
                     <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm my-2 mr-2">
                         <CmdButton cmd="copy" ui={false} arg=""
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Image"}</div>}
@@ -112,6 +125,11 @@ export default function Demo() {
                         <CmdButton cmd="copy" ui={false} arg=""
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Link"}</div>}
                         />
+                        <button onClick={
+                            function () {
+                                setLinkModal(true);
+                            }
+                        }>Link2</button>
 
                         <CmdButton cmd="insertHTML" ui={false} arg="<pre><code>"
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Code"}</div>}
@@ -122,6 +140,8 @@ export default function Demo() {
                         />
                     </span>
 
+                    {// remove format
+                    }
                     <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm my-2 mr-2">
                         <CmdButton cmd="removeFormat" ui={false} arg=""
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Remove Format"}</div>}
@@ -130,6 +150,8 @@ export default function Demo() {
 
                     <div className="-my-2"></div>
 
+                    {// font manipulation
+                    }
                     <div>
                         <select
                             name="FontSize"
@@ -173,6 +195,8 @@ export default function Demo() {
 
                     <div className="-my-2"></div>
 
+                    {// text colour manipulation
+                    }
                     <div className="max-h-[25px] inline-flex overflow-hidden rounded-md border bg-white shadow-sm my-2 mr-2">
                         <input className="cursor-pointer" value={fontColour} id="colorPickerFont" type="color"
                             onChange={function (e) {
@@ -221,11 +245,21 @@ export default function Demo() {
         <>
             <ControlPanel />
 
+            <PopupInput props={{
+                ref: linkRef,
+                title: "Insert Link",
+                description: "Select text where to insert link",
+                object: "link",
+                trigger: linkModal,
+                setTrigger: setLinkModal
+            }}
+
+            />
+
             <ContentEditable
                 onChange={onContentChange}
                 onBlur={onContentChange}
                 html={content}
-                // innerRef={contentArea}
                 disabled={false}
                 style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word", minHeight: "500px", maxWidth: "900px" }}
                 className="block py-3 px-5 text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
