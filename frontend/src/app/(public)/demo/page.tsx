@@ -3,7 +3,7 @@
 import sanitizeHtml from "sanitize-html"
 import ContentEditable from 'react-contenteditable';
 import { createRef, useEffect, useRef, useState } from "react";
-import PopupInput from "@/components/popupInput/popupInput";
+import PopupInputCmd from "@/components/popupInput/popupInputCmd";
 
 
 export default function Demo() {
@@ -15,7 +15,6 @@ export default function Demo() {
     const [fontName, setFontName] = useState("sans-serif");
 
     const [linkModal, setLinkModal] = useState(false);
-    var linkRef = "";
 
     const fontSizeSymbol = "12px";
     const heightSymbol = "15px";
@@ -34,12 +33,13 @@ export default function Demo() {
         const sanitizeConf = {
             allowedTags: ["b", "i", "a", "p", "h1", "h2", "h3", "strong",
                 "div", "br", "u", "strike", "ul", "li", "ol", "font", "blockquote", "pre",
-                "code"],
+                "code", "a"],
             allowedAttributes: { a: ["href", "face", "size", "color", "style", "align"] }
         };
-        // console.log(content)
-        // console.log(document.queryCommandSupported("fontName"))
-        console.log(linkRef)
+        console.log(content)
+        // document.execCommand("insertHTML", false, "<a href='https://stackoverflow.com/questions/26402534/how-to-listen-state-changes-in-react-js'>sdf</a>");
+        // console.log(document.queryCommandSupported("insertLink"))
+        // console.log(linkString)
         setContent(evt.currentTarget.innerHTML)
     }
 
@@ -122,14 +122,9 @@ export default function Demo() {
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Image"}</div>}
                         />
 
-                        <CmdButton cmd="copy" ui={false} arg=""
+                        <CmdButtonPopup cmd="insertLink"
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Link"}</div>}
                         />
-                        <button onClick={
-                            function () {
-                                setLinkModal(true);
-                            }
-                        }>Link2</button>
 
                         <CmdButton cmd="insertHTML" ui={false} arg="<pre><code>"
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Code"}</div>}
@@ -236,6 +231,20 @@ export default function Demo() {
         );
     }
 
+    function CmdButtonPopup(props: { cmd: string, icon: JSX.Element }) {
+        return (
+            <button
+                className="inline-block p-2 text-gray-700 hover:bg-gray-300 focus:relative"
+                key={props.cmd}
+                onMouseDown={() => {
+                    setLinkModal(true)
+                }}
+            >
+                {props.icon}
+            </button>
+        );
+    }
+
     function cmdFunc(cmd: string, ui: boolean, arg: string) {
         document.execCommand(cmd, ui, arg);
     }
@@ -245,12 +254,14 @@ export default function Demo() {
         <>
             <ControlPanel />
 
-            <PopupInput props={{
-                ref: linkRef,
+            <PopupInputCmd props={{
                 title: "Insert Link",
                 description: "Select text where to insert link",
                 object: "link",
+                object1: "text",
                 trigger: linkModal,
+                cmd: "insertText",
+                ui: false,
                 setTrigger: setLinkModal
             }}
 

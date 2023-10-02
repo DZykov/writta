@@ -38,3 +38,8 @@ pre code {
   width: fit-content;
   min-width: 400px;
 }
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
