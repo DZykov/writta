@@ -5,8 +5,9 @@ import ContentEditable from 'react-contenteditable';
 import { useEffect, useRef, useState } from "react";
 import PopupInputCmd from "@/components/popupInput/popupInputCmd";
 import Prism from 'prismjs';
+import './syntaxHighlight';
 import { Tab, Tabs } from "@/components/tabs/tabs";
-import "prismjs/themes/prism-1.css";
+import "prismjs/themes/prism-okaidia.css";
 
 
 export default function Demo() {
@@ -44,7 +45,9 @@ export default function Demo() {
     };
 
     const highlight = async () => {
-        //Prism.highlightElement(document.getElementById('2') as Element);
+        Prism.hooks.add('before-sanity-check', function (env) {
+            env.element.innerHTML = env.element.innerHTML.replace(/<br>/g, '\n');
+        });
         await Prism.highlightAll();
     };
 
