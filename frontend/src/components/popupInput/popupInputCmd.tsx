@@ -1,15 +1,17 @@
+"use client"
+
 import React from "react";
 import { useRef } from "react"
 
-export default function PopupInputCmd({ props }: { props: { title: string, description: string, object: string, object1: string, trigger: boolean, cmd: string, ui: boolean, setTrigger: (bool: boolean) => void } }) {
+export default function PopupInputCmd({ props }: { props: { title: string, description: string, object: string, object1: string, trigger: boolean, cmd: string, ui: boolean, startHTML: string, endHTML: string, setTrigger: (bool: boolean) => void, setCmd: (cmd: string, ui: boolean, args: string) => void } }) {
 
-    const linkRef = useRef<HTMLInputElement>(null);
+    const linkRef = useRef<HTMLInputElement>(null); // HTML attributes
     const textRef = useRef<HTMLInputElement>(null);
 
     return (
         (props.trigger) ? (
             <>
-                <div className="fixed top-60 z-50 mx-auto inset-x-0 max-w-[400px] m-10 rounded-lg bg-indigo-50 p-8 shadow-2xl">
+                <div className="fixed top-60 mx-auto inset-x-0 max-w-[400px] m-10 rounded-lg bg-indigo-50 p-8 shadow-2xl">
                     <h2 className="text-lg font-bold">{props.title}</h2>
 
                     <p className="mt-2 mb-3 text-sm text-gray-500">
@@ -65,10 +67,11 @@ export default function PopupInputCmd({ props }: { props: { title: string, descr
                                         props.setTrigger(false);
                                         return;
                                     }
-                                    // props.setLink(linkRef.current.value);
                                     evt.preventDefault();
-                                    console.log("<a href='" + linkRef.current.value + "'>" + textRef.current.value + "</a>")
-                                    document.execCommand(props.cmd, props.ui, "<a href='" + linkRef.current.value + "'>" + linkRef.current.value + "</a>");
+                                    props.object == "image link" ?
+                                        props.setCmd(props.cmd, props.ui, props.startHTML + linkRef.current.value + "' style='height: auto; width:auto; max-width: " + textRef.current.value + "%;" + props.endHTML)
+                                        :
+                                        props.setCmd(props.cmd, props.ui, props.startHTML + linkRef.current.value + "'>" + textRef.current.value + props.endHTML);
                                     props.setTrigger(false);
                                 }
                             }

@@ -15,9 +15,26 @@ export default function Demo() {
     const [fontName, setFontName] = useState("sans-serif");
 
     const [linkModal, setLinkModal] = useState(false);
+    const [imageModal, setImageModal] = useState(false);
+
 
     const fontSizeSymbol = "12px";
     const heightSymbol = "15px";
+
+    const focus = useRef<HTMLInputElement>(null);
+
+    const sanitizeConf = {
+        allowedTags: ["b", "i", "a", "p", "h1", "h2", "h3", "strong",
+            "div", "br", "u", "strike", "ul", "li", "ol", "font", "blockquote", "pre",
+            "code", "a", "img", "span"],
+        selfClosing: ["br"],
+        allowedSchemes: ['https', 'http'],
+        allowedAttributes: {
+            '*': ["href", "face", "size", "color", "style", "align", "bgcolor", "background-color",
+                "dipsplay", "width", "height", "max-width"],
+            img: ['src'],
+        }
+    };
 
     useEffect(() => {
         initEditor();
@@ -30,17 +47,12 @@ export default function Demo() {
     }
 
     const onContentChange = (evt: any) => {
-        const sanitizeConf = {
-            allowedTags: ["b", "i", "a", "p", "h1", "h2", "h3", "strong",
-                "div", "br", "u", "strike", "ul", "li", "ol", "font", "blockquote", "pre",
-                "code", "a"],
-            allowedAttributes: { a: ["href", "face", "size", "color", "style", "align"] }
-        };
-        console.log(content)
-        // document.execCommand("insertHTML", false, "<a href='https://stackoverflow.com/questions/26402534/how-to-listen-state-changes-in-react-js'>sdf</a>");
-        // console.log(document.queryCommandSupported("insertLink"))
-        // console.log(linkString)
+        // console.log(evt.currentTarget.innerHTML)
+        // console.log(1)
+        // console.log((sanitizeHtml(evt.currentTarget.innerHTML, sanitizeConf)))
+        // setContent(evt.currentTarget.innerHTML)
         setContent(evt.currentTarget.innerHTML)
+
     }
 
     function ControlPanel() {
@@ -118,11 +130,11 @@ export default function Demo() {
                     {// functions
                     }
                     <span className="inline-flex overflow-hidden rounded-md border bg-white shadow-sm my-2 mr-2">
-                        <CmdButton cmd="copy" ui={false} arg=""
+                        <CmdButtonPopup cmd="insertImage" modalFunc={setImageModal}
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Image"}</div>}
                         />
 
-                        <CmdButtonPopup cmd="insertLink"
+                        <CmdButtonPopup cmd="insertLink" modalFunc={setLinkModal}
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Link"}</div>}
                         />
 
@@ -231,13 +243,13 @@ export default function Demo() {
         );
     }
 
-    function CmdButtonPopup(props: { cmd: string, icon: JSX.Element }) {
+    function CmdButtonPopup(props: { cmd: string, icon: JSX.Element, modalFunc: (bool: boolean) => void }) {
         return (
             <button
                 className="inline-block p-2 text-gray-700 hover:bg-gray-300 focus:relative"
                 key={props.cmd}
                 onMouseDown={() => {
-                    setLinkModal(true)
+                    props.modalFunc(true)
                 }}
             >
                 {props.icon}
@@ -245,7 +257,15 @@ export default function Demo() {
         );
     }
 
-    function cmdFunc(cmd: string, ui: boolean, arg: string) {
+    function timeout(delay: number) {
+        return new Promise(res => setTimeout(res, delay));
+    }
+
+    async function cmdFunc(cmd: string, ui: boolean, arg: string) {
+        if (focus.current) {
+            focus.current!.focus();
+        }
+        // await timeout(5000);
         document.execCommand(cmd, ui, arg);
     }
 
@@ -256,24 +276,43 @@ export default function Demo() {
 
             <PopupInputCmd props={{
                 title: "Insert Link",
-                description: "Select text where to insert link",
+                description: "Put cursor where to insert link",
                 object: "link",
                 object1: "text",
                 trigger: linkModal,
-                cmd: "insertText",
+                cmd: "insertHTML",
                 ui: false,
-                setTrigger: setLinkModal
+                startHTML: "<a href='",
+                endHTML: "</a>",
+                setTrigger: setLinkModal,
+                setCmd: cmdFunc,
             }}
+            />
 
+            <PopupInputCmd props={{
+                title: "Insert Image Link",
+                description: "Put cursor where to insert image",
+                object: "image link",
+                object1: "width of image in %",
+                trigger: imageModal,
+                cmd: "insertHTML",
+                ui: false,
+                startHTML: " <img src='",
+                endHTML: "'>",
+                setTrigger: setImageModal,
+                setCmd: cmdFunc,
+            }}
             />
 
             <ContentEditable
+                key={1}
                 onChange={onContentChange}
                 onBlur={onContentChange}
                 html={content}
                 disabled={false}
                 style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word", minHeight: "500px", maxWidth: "900px" }}
                 className="block py-3 px-5 text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                innerRef={focus}
             />
         </>
     )
