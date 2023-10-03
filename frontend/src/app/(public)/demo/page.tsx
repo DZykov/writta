@@ -2,8 +2,9 @@
 
 import sanitizeHtml from "sanitize-html"
 import ContentEditable from 'react-contenteditable';
-import { createRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PopupInputCmd from "@/components/popupInput/popupInputCmd";
+import Prism from 'prismjs';
 
 
 export default function Demo() {
@@ -16,7 +17,9 @@ export default function Demo() {
 
     const [linkModal, setLinkModal] = useState(false);
     const [imageModal, setImageModal] = useState(false);
+    const [codeModal, setCodeModal] = useState(false);
 
+    const codeLang = useRef<string>("");
 
     const fontSizeSymbol = "12px";
     const heightSymbol = "15px";
@@ -36,6 +39,10 @@ export default function Demo() {
         }
     };
 
+    const highlight = async () => {
+        await Prism.highlightAll();
+    };
+
     useEffect(() => {
         initEditor();
     }, []);
@@ -52,7 +59,6 @@ export default function Demo() {
         // console.log((sanitizeHtml(evt.currentTarget.innerHTML, sanitizeConf)))
         // setContent(evt.currentTarget.innerHTML)
         setContent(evt.currentTarget.innerHTML)
-
     }
 
     function ControlPanel() {
@@ -138,8 +144,12 @@ export default function Demo() {
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Link"}</div>}
                         />
 
-                        <CmdButton cmd="insertHTML" ui={false} arg="<pre><code>"
+                        <CmdButton cmd="insertHTML" ui={false} arg={`<pre><code class='language-${codeLang.current}'>`}
                             icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Code"}</div>}
+                        />
+
+                        <CmdButtonPopup cmd="insertHTML" modalFunc={setCodeModal}
+                            icon={<div style={{ fontSize: fontSizeSymbol, height: heightSymbol }}>{"Code Lang"}</div>}
                         />
 
                         <CmdButton cmd="formatBlock" ui={false} arg="<blockquote>"
@@ -301,6 +311,23 @@ export default function Demo() {
                 endHTML: "'>",
                 setTrigger: setImageModal,
                 setCmd: cmdFunc,
+            }}
+            />
+
+            <PopupInputCmd props={{
+                title: "Code language",
+                description: "Set code language",
+                object: "language",
+                object1: "theme",
+                trigger: codeModal,
+                cmd: "insertHTML",
+                ui: false,
+                startHTML: `<pre><code class='language-${codeLang}'>`,
+                endHTML: "",
+                setTrigger: setCodeModal,
+                setCmd: function (cmd: string, _ui: boolean, _arg: string) {
+                    codeLang.current = cmd;
+                },
             }}
             />
 

@@ -32,11 +32,10 @@ pre code {
   white-space: pre;
   overflow-x: scroll;
   max-width: 100%;
-  min-width: 100px;
+  min-width: 250px;
   padding: 5px;
   margin: 10px;
   width: fit-content;
-  min-width: 400px;
 }
 
 a {

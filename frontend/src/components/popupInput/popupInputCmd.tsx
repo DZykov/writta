@@ -71,7 +71,10 @@ export default function PopupInputCmd({ props }: { props: { title: string, descr
                                     props.object == "image link" ?
                                         props.setCmd(props.cmd, props.ui, props.startHTML + linkRef.current.value + "' style='height: auto; width:auto; max-width: " + textRef.current.value + "%;" + props.endHTML)
                                         :
-                                        props.setCmd(props.cmd, props.ui, props.startHTML + linkRef.current.value + "'>" + textRef.current.value + props.endHTML);
+                                        props.object == "language" ?
+                                            props.setCmd(linkRef.current.value, props.ui, props.startHTML)
+                                            :
+                                            props.setCmd(props.cmd, props.ui, props.startHTML + linkRef.current.value + "'>" + textRef.current.value + props.endHTML);
                                     props.setTrigger(false);
                                 }
                             }
