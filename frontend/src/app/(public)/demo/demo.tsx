@@ -57,7 +57,6 @@ export default function Demo() {
 
     useEffect(() => {
         highlight();
-        console.log(contentRender)
     }, [contentRender]);
 
     const initEditor = () => {
@@ -307,7 +306,6 @@ export default function Demo() {
         if (focus.current) {
             focus.current!.focus();
         }
-        // await timeout(5000);
         document.execCommand(cmd, ui, arg);
     }
 
