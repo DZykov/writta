@@ -1,4 +1,45 @@
 {
-  "node": {},
+  "node": {
+    "8479adb8f74535152e162eb33177fe4ade787761": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!",
+        "app/(public)/demo/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!",
+        "app/(public)/[treasure]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!",
+        "app/not-found": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!",
+        "app/(public)/login/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/(public)/demo/page": "action-browser",
+        "app/(public)/[treasure]/page": "action-browser",
+        "app/not-found": "action-browser",
+        "app/(public)/login/page": "action-browser"
+      }
+    },
+    "857198d74b3fbd19242a52c0dc86c89ec959dfba": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!",
+        "app/(public)/demo/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!",
+        "app/(public)/[treasure]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!",
+        "app/not-found": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!",
+        "app/(public)/login/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/(public)/demo/page": "action-browser",
+        "app/(public)/[treasure]/page": "action-browser",
+        "app/not-found": "action-browser",
+        "app/(public)/login/page": "action-browser"
+      }
+    },
+    "cea6706087f6f08052acee16856044701d12eb0e": {
+      "workers": {
+        "app/(public)/login/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapp%2F(public)%2Flogin%2Fpage.tsx%22%2C%5B%22default%22%5D%5D%2C%5B%22%2Fhome%2Fdemid%2FDocuments%2FProjects%2Fwritta%2Ffrontend%2Fsrc%2Fapi%2Fcheck.tsx%22%2C%5B%22checkAuth%22%2C%22create%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/(public)/login/page": "rsc"
+      }
+    }
+  },
   "edge": {}
 }

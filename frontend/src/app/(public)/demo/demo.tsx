@@ -8,8 +8,6 @@ import Prism from 'prismjs';
 import './syntaxHighlight';
 import { Tab, Tabs } from "@/components/tabs/tabs";
 import "prismjs/themes/prism-okaidia.css";
-import Canvas from "@/components/identicon/identicon";
-import Identicon from "@/components/identicon/identicon";
 
 
 export default function Demo() {

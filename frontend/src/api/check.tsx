@@ -3,8 +3,11 @@
 import { cookies } from 'next/headers'
 
 export async function checkAuth() {
-    const cookiesList = cookies()
-    const hasCookie = cookiesList.has('MYCOOKIE')
+    const cookiesList = await cookies()
+    const hasCookie = await cookiesList.has('MYCOOKIE')
+    if (hasCookie) {
+        return await cookiesList.get("MYCOOKIE")?.value;
+    }
     return hasCookie;
 }
 
