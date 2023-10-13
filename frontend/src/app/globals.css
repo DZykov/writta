@@ -43,6 +43,6 @@ a {
 }
 
 #identicon{
-  width: 240px;
-  height: 240px;
+  width: 16vh;
+  aspect-ratio: 1 / 1;
 }
