@@ -41,3 +41,8 @@ a {
   color: blue;
   text-decoration: underline;
 }
+
+#identicon{
+  width: 240px;
+  height: 240px;
+}

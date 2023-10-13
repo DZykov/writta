@@ -25,9 +25,9 @@ export function createIdenticon(nickname: string, canvas: HTMLCanvasElement) {
     squares = [...new Array(lenX)].map((a, i) => [...new Array(lenY)].map((a, i) => { return { colour: "#FFFFFF" }; }));
 
     for (let i = 0; i < algo.length; i++) {
-        if (i >= lenX * lenY / 2) {
+        /* if (i >= lenX * lenY / 2) {
             break;
-        }
+        } */
         if (algo[i] >= '2' && algo[i] <= '9') {
             if (parseInt(algo[i]) % 2 == 1) {
                 squares[y][x].colour = color;
