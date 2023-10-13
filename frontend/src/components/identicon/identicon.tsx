@@ -1,12 +1,10 @@
-import { createIdenticon } from '@/utils/identicon';
 import React, { useRef, useEffect, useState } from 'react';
+import { createIdenticon } from './identiconUtil';
 
 const Identicon = (str: { nickName: string }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    //const [content, setContent] = useState("");
 
     useEffect(() => {
-        //setContent(str.nickName);
         if (canvasRef.current) {
             const canvas = canvasRef.current;
             const context = canvas.getContext('2d');
@@ -16,7 +14,7 @@ const Identicon = (str: { nickName: string }) => {
         }
     });
 
-    return <canvas ref={canvasRef} id="identicon"></canvas>;
+    return <canvas ref={canvasRef} id="identicon" className="border-2 border-gray-200 m-1"></canvas>;
 };
 
 export default Identicon;

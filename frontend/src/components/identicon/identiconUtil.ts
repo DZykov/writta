@@ -1,4 +1,4 @@
-import md5 from "./md5";
+import md5 from "../../utils/md5";
 
 var lenX = 7;
 var lenY = 7;
@@ -100,8 +100,8 @@ function drawIcon(canvas: HTMLCanvasElement) {
     var bh = canvas.height;
     var stepX = bw / lenX;
     var stepY = bh / lenY;
-    context!.fillStyle = 'black';
-    context!.fillRect(0, 0, bw, bh);
+    context!.fillStyle = "#848587";
+    context!.fillRect(1, 1, bw, bh);
     squares.forEach((line, i) => {
         line.forEach((square, j) => {
             context!.fillStyle = square.colour;
