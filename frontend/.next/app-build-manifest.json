@@ -1,26 +1,5 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
-    "/(public)/[treasure]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/[treasure]/page.js"
-    ],
-    "/(public)/[treasure]/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/[treasure]/layout.js"
-    ],
     "/(public)/demo/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -32,15 +11,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(public)/demo/layout.js"
     ],
-    "/(public)/login/page": [
+    "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(public)/login/page.js"
-    ],
-    "/(public)/login/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/login/layout.js"
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ]
   }
 }

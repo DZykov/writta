@@ -11,7 +11,7 @@ export default function PopupInputCmd({ props }: { props: { title: string, descr
     return (
         (props.trigger) ? (
             <>
-                <div className="fixed top-60 mx-auto inset-x-0 max-w-[400px] m-10 rounded-lg bg-indigo-50 p-8 shadow-2xl">
+                <div className="fixed top-60 mx-auto inset-x-0 max-w-[400px] m-10 rounded-lg bg-indigo-50 p-8 shadow-2xl z-50">
                     <h2 className="text-lg font-bold">{props.title}</h2>
 
                     <p className="mt-2 mb-3 text-sm text-gray-500">

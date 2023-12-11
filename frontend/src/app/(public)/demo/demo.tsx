@@ -314,7 +314,7 @@ export default function Demo() {
         <>
             <Tabs>
                 <Tab label="Editor">
-                    <div>
+                    <div className="editor">
                         <ControlPanel />
 
                         <PopupInputCmd props={{
@@ -381,7 +381,7 @@ export default function Demo() {
                 </Tab>
 
                 <Tab label="Preview">
-                    <div>
+                    <div className="editor">
                         <ReviewPanel />
 
                         <ContentEditable

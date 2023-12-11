@@ -1,6 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/(public)/demo/page": "app/(public)/demo/page.js",
-  "/(public)/login/page": "app/(public)/login/page.js",
-  "/(public)/[treasure]/page": "app/(public)/[treasure]/page.js"
+  "/(public)/demo/page": "app/(public)/demo/page.js"
 }
