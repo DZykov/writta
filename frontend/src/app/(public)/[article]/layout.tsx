@@ -1,7 +1,7 @@
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
-            Layout
+            <div className="mt-4 mx-auto"></div>
             <main>{children}</main>
         </>
     )

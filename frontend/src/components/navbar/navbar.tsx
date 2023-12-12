@@ -20,11 +20,11 @@ const Navbar = (str: { nickName: string }) => {
 
     return (<>
 
-        <header className="bg-slate-200 p-2 rounded-lg mb-4">
+        <header className="bg-slate-200 p-2 rounded-lg px-6">
             <nav className='w-full flex items-center top-0 z-20 bg-primary'>
                 <div className='w-full flex justify-between items-center mx-auto'>
 
-                    <p className='text-[30px] font-bold cursor-pointer flex text-sky-600 underline bold font-serif'>
+                    <p className='text-[30px] cursor-pointer flex text-sky-600 underline'>
                         <span className='z-40'>writta</span>
                     </p>
 
