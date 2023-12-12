@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     return (
         <html lang="en">
-            <body className='m-5'>
+            <body className=''>
                 <Navbar nickName={username} />
                 {children}
             </body>
