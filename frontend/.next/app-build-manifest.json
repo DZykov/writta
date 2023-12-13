@@ -6,9 +6,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
     "/(public)/[article]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/(public)/[article]/page.css",
       "static/chunks/app/(public)/[article]/page.js"
     ],
     "/(public)/[article]/layout": [

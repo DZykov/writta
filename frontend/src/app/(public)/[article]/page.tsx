@@ -1,7 +1,9 @@
 'use client'
 
+import CommentsSection from "@/components/comments/comments";
 import Identicon from "@/components/identicon/identicon";
 import { useParams } from "next/navigation";
+import './style.css';
 
 export default async function Treasure({ params }: { params: { article: string } }) {
 
@@ -11,7 +13,7 @@ export default async function Treasure({ params }: { params: { article: string }
             <div className="post">
                 <div className="container">
                     <div style={{ '--image-url': `url(https://i.pinimg.com/736x/7e/90/43/7e9043a23a0ae24b178f14453f05a7e4.jpg)` }} className="head bg-[image:var(--image-url)] object-fill">
-                        <div className="category">writta</div>
+                        <div className="logo">writta</div>
                         <div className="info">
                             <div className="tags">
                                 <i className="fa-solid fa-tag"></i>
@@ -75,6 +77,7 @@ export default async function Treasure({ params }: { params: { article: string }
                     </div>
                 </div>
             </div>
+            <CommentsSection article={""} />
         </>
     );
 }

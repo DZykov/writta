@@ -41,35 +41,11 @@
 }
 
 #identicon{
-  width: 16vh;
+  width: 8vh;
   aspect-ratio: 1 / 1;
 }
 
-
-
-.post{
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  color: #000;
-  padding: 50px;
-}
-
-.post .container{
-  max-width: 1000px;
-}
-
-.post .container .head{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 400px;
-  padding: 20px 50px 60px;
-  border-radius: 16px;
-}
-
-.post .container .head .category{
+.logo{
   font-size: 1.2rem;
   color: #000;
   background: #fff;
@@ -79,102 +55,5 @@
   text-decoration: underline;
   padding: 0 10px;
   color: rgb(3 105 161);
-}
-
-.post .container .head .username{
-  font-size: 1.2rem;
-  color: #000;
-  background: #fff;
-  opacity: 0.74;
-  border-radius: 16px;
-  width: fit-content;
-  padding: 0 10px;
-  margin-left: auto; 
-  margin-right: 0;
-}
-
-.post .container .head .info{
-  text-align: center;
-  color: #000;
-  background: #fff;
-  opacity: 0.74;
-  border-radius: 16px;
-}
-
-.post .container .head .info .tags i{
-  font-size: 18px;
-  margin-right: 4px;
-}
-
-.post .container .head .info .tags span{
-  font-size: 0.8rem;
-}
-
-.post .container .head .info .title{
-  margin: 20px 0;
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.post .container .head .info .subtitle{
-  min-width: 70%;
-  margin: 0 auto 20px;
-  font-size: 1rem;
-}
-
-.post .details{
-  display: flex;
-  justify-content: space-between;
-  background: rgba(0, 0, 0, 0.14);
-  margin-top: 50px;
-  padding: 20px 50px;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.68);
-}
-
-.post .details .item .item-title{
-  color: #000;
-}
-
-.post .details .item .item-text{
-  margin-top: 12px;
-  font-size: 1.5rem;
-}
-
-.post article blockquote{
-  margin: 40px 0;
-  background-color: #181818;
-  color: white;
-  padding: 30px;
-  border-radius: 16px;
-}
-
-@media screen and (max-width: 768px) {
-  
-  .post .container .head{
-      padding: 10px 20px 30px;
-      min-height: 300px;
-  }
-
-  .post .container .head .category{
-      font-size: 0.9rem;
-  }
-
-  .post .container .head .info .title{
-      font-size: 2.2rem;
-  }
-
-  .post .container .head .info .subtitle{
-      font-size: 0.8rem;
-  }
-
-  .post .container .details {
-      flex-direction: column;
-  }
-
-  .post .container .details .item:not(:last-child){
-      margin-bottom: 30px;
-  }
-
+  margin-left: 2px;
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import Identicon from "../identicon/identicon";
+import './style.css';
 
 const Navbar = (str: { nickName: string }) => {
 
@@ -18,66 +19,60 @@ const Navbar = (str: { nickName: string }) => {
         }
     }
 
-    return (<>
+    return (
+        <>
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
+            <div className={"navbody " + (toggle === true ? 'open' : '')}>
+                <nav className="sidebar" style={{ height: "" + (toggle === true ? '550px' : '') }}>
+                    <div className="sidebar-inner">
+                        <header className="sidebar-header">
+                            <button type="button" className="navbutton sidebar-burger" onClick={() => setToggle(!toggle)}>
+                                <i className='bx bx-menu'></i>
+                            </button>
+                            <img src="logo.png" alt="" className="sidebar-logo" />
+                            <div className="logo">writta</div>
+                        </header>
 
-        <header className="bg-slate-200 p-2 rounded-lg px-6">
-            <nav className='w-full flex items-center top-0 z-20 bg-primary'>
-                <div className='w-full flex justify-between items-center mx-auto'>
+                        <nav className="sidebar-menu">
+                            <button type="button" className="navbutton">
+                                <i className='bx bx-home' ></i>
+                                <span>Home</span>
+                            </button>
+                            <button type="button" className="navbutton">
+                                <i className='bx bx-news' ></i>
+                                <span>Feed</span>
+                            </button>
+                            <button type="button" className="navbutton has-border">
+                                <i className='bx bx-search' ></i>
+                                <span>Search</span>
+                            </button>
+                            <button type="button" className="navbutton">
+                                <i className='bx bx-user'></i>
+                                <span>Profile</span>
+                            </button>
+                            <button type="button" className="navbutton">
+                                <i className='bx bx-book' ></i>
+                                <span>My Articles</span>
+                            </button>
+                            <button type="button" className="navbutton has-border">
+                                <i className='bx bx-cog' ></i>
+                                <span>Settings</span>
+                            </button>
+                            <button type="button" className="navbutton">
+                                <i className='bx bx-log-in' ></i>
+                                <span>Login</span>
+                            </button>
+                            <button type="button" className="navbutton">
+                                <i className='bx bx-log-out' ></i>
+                                <span>Logout</span>
+                            </button>
+                        </nav>
 
-                    <p className='text-[30px] cursor-pointer flex text-sky-600 underline'>
-                        <span className='z-40'>writta</span>
-                    </p>
 
-                    <ul className='list-none hidden sm:flex flex-row gap-10'>
-                        <li className="hover:text-sky-600 text-[18px] font-medium cursor-pointer">
-                            <a href="#main" className="text-[20px]">Main</a>
-                        </li>
-                        <li className="hover:text-sky-600 text-[18px] font-medium cursor-pointer">
-                            <a href="#main" className="text-[20px]">Profile</a>
-                        </li>
-                        <li className="hover:text-sky-600 text-[18px] font-medium cursor-pointer">
-                            <a href="#main" className="text-[20px]">Articles</a>
-                        </li>
-                        <li className="hover:text-sky-600 text-[18px] font-medium cursor-pointer">
-                            <a href="#main" className="text-[20px]">Chats</a>
-                        </li>
-                    </ul>
-
-                    <div className='sm:hidden flex flex-1 justify-end items-center z-20'>
-                        <img
-                            src={toggle ? "/assets/close.svg" : "/assets/menu.svg"}
-                            alt='menu'
-                            className='w-[28px] h-[28px] object-contain z-20'
-                            onClick={() => setToggle(!toggle)}
-                        />
-
-                        <div
-                            className={`${!toggle ? "hidden" : "flex"
-                                } p-6 black-gradient absolute top-5 right-0 my-2 min-w-[140px] z-10 rounded-xl bg-slate-200`}
-                        >
-                            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-3'>
-
-                                <li className="hover:text-sky-600 text-[18px] font-medium cursor-pointer">
-                                    <a href="#main" className="text-[20px]">Main</a>
-                                </li>
-                                <li className="hover:text-sky-600 text-[18px] font-medium cursor-pointer">
-                                    <a href="#main" className="text-[20px]">Profile</a>
-                                </li>
-                                <li className="hover:text-sky-600 text-[18px] font-medium cursor-pointer">
-                                    <a href="#main" className="text-[20px]">Articles</a>
-                                </li>
-                                <li className="hover:text-sky-600 text-[18px] font-medium cursor-pointer">
-                                    <a href="#main" className="text-[20px]">Chats</a>
-                                </li>
-
-                            </ul>
-                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>
-
-    </>);
+                </nav>
+            </div>
+        </>);
 };
 
 export default Navbar;
