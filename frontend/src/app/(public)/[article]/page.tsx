@@ -4,8 +4,11 @@ import CommentsSection from "@/components/comments/comments";
 import Identicon from "@/components/identicon/identicon";
 import { useParams } from "next/navigation";
 import './style.css';
+import "prismjs/themes/prism-okaidia.css";
+import { useEffect } from "react";
 
 export default async function Treasure({ params }: { params: { article: string } }) {
+
 
     return (
         // `url(${fetchedUrl})`
@@ -44,7 +47,7 @@ export default async function Treasure({ params }: { params: { article: string }
                         </div>
                     </section>
                     <div className="editor mb-10">
-                        <h4>What is Web Coding?</h4>
+                        <h3>What is Web Coding?</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At cupiditate deleniti voluptas dolor, non optio
                             vitae reiciendis, eveniet ullam suscipit harum velit esse provident id! Dolore culpa omnis ullam! Atque?
                         </p>
@@ -74,6 +77,14 @@ export default async function Treasure({ params }: { params: { article: string }
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto nam odio iste unde laboriosam. Modi
                             dolorum ipsum aliquid labore minus fuga exercitationem sunt enim! Amet quaerat vero minima ea assumenda.
                         </p>
+                        <pre className="language-python" tabIndex={0}>
+                            <code className="language-python">
+                                <span className="token keyword">print</span>
+                                <span className="token punctuation">(</span>
+                                <span className="token number">1</span>
+                                <span className="token punctuation">)</span>
+                            </code>
+                        </pre>
                     </div>
                 </div>
             </div>

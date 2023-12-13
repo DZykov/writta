@@ -101,7 +101,9 @@
   }
   
   @media screen and (max-width: 768px) {
-    
+    .post .container  {
+      margin: 10px;
+    }
     .post .container .head{
         padding: 10px 20px 30px;
         min-height: 300px;
@@ -113,6 +115,7 @@
   
     .post .container .head .info .title{
         font-size: 2.2rem;
+        margin: 5px;
     }
   
     .post .container .head .info .subtitle{

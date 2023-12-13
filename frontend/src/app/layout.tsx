@@ -18,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             setUsername(user as string);
         }
         fetchData();
-        console.log(username)
     }, [username]);
 
     return (

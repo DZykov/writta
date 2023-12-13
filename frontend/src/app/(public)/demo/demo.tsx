@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import PopupInputCmd from "@/components/popupInput/popupInputCmd";
 import Prism from 'prismjs';
 import './syntaxHighlight';
-import { Tab, Tabs } from "@/components/tabs/tabs";
 import "prismjs/themes/prism-okaidia.css";
+import { Tab, Tabs } from "@/components/tabs/tabs";
 
 
 export default function Demo() {
@@ -373,7 +373,7 @@ export default function Demo() {
                             onBlur={onContentChange}
                             html={content}
                             disabled={false}
-                            style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word", minHeight: "500px", maxWidth: "900px" }}
+                            style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word", minHeight: "500px", maxWidth: "1000px" }}
                             className="block py-3 px-5 text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                             innerRef={focus}
                         />
@@ -390,7 +390,7 @@ export default function Demo() {
                             onChange={() => 0}
                             html={content}
                             disabled={true}
-                            style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word", minHeight: "500px", maxWidth: "900px" }}
+                            style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word", minHeight: "500px", maxWidth: "1000px" }}
                             className="border-t border-gray-400 pt-5 block px-5 text-gray-900"
                         />
                     </div>

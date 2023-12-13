@@ -48,7 +48,7 @@ const Navbar = (str: { nickName: string }) => {
                             </button>
                             <button type="button" className="navbutton">
                                 <i className='bx bx-user'></i>
-                                <span>Profile</span>
+                                <span>{str.nickName}</span>
                             </button>
                             <button type="button" className="navbutton">
                                 <i className='bx bx-book' ></i>
