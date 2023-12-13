@@ -44,6 +44,11 @@
   aspect-ratio: 1 / 1;
 }
 
+#identicon-large{
+  width: 32vh;
+  aspect-ratio: 1 / 1;
+}
+
 .logo{
   font-size: 1.2rem;
   color: #000;

@@ -1,0 +1,45 @@
+.card{
+    color: #000;
+    background: rgba(125,211,252, 0.33);
+    border-radius: 1rem;
+    padding: 1.3rem 1.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    border: 1px solid #ffffff20;
+}
+
+.card .card-body{
+    padding: 1.5rem;
+}
+
+.card .card-body .logo{
+    text-align: center;
+}
+
+.card .card-body .logo h4{
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.card .card-body .logo img{
+    max-width: 120px;
+}
+
+.card .card-body a{
+    display: inline-block;
+    background-color: #282828;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 14px;
+}
+
+.card .card-body h4{
+    margin: 10px 0;
+}
+
+.card .card-body ul{
+    margin-top: 0;
+}
