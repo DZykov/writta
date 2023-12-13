@@ -56,3 +56,16 @@
   color: rgb(3 105 161);
   margin-left: 2px;
 }
+
+.logo-login{
+  font-size: 2.1rem;
+  color: #000;
+  background: #fff;
+  opacity: 0.74;
+  border-radius: 16px;
+  width: fit-content;
+  text-decoration: underline;
+  padding: 0 10px;
+  color: rgb(3 105 161);
+  margin-left: 2px;
+}

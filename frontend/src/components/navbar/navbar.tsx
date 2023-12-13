@@ -23,7 +23,7 @@ const Navbar = (str: { nickName: string }) => {
         <>
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
             <div className={"navbody " + (toggle === true ? 'open' : '')}>
-                <nav className="sidebar" style={{ height: "" + (toggle === true ? '550px' : '') }}>
+                <nav className="sidebar" style={{ height: "" + (toggle === true ? '600px' : '') }}>
                     <div className="sidebar-inner">
                         <header className="sidebar-header">
                             <button type="button" className="navbutton sidebar-burger" onClick={() => setToggle(!toggle)}>
@@ -52,7 +52,11 @@ const Navbar = (str: { nickName: string }) => {
                             </button>
                             <button type="button" className="navbutton">
                                 <i className='bx bx-book' ></i>
-                                <span>My Articles</span>
+                                <span>Write</span>
+                            </button>
+                            <button type="button" className="navbutton">
+                                <i className='bx bx-chat' ></i>
+                                <span>Chats</span>
                             </button>
                             <button type="button" className="navbutton has-border">
                                 <i className='bx bx-cog' ></i>
