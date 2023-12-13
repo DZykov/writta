@@ -75,12 +75,12 @@
   .post .details{
     display: flex;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.14);
+    background: rgb(226 232 240);
     margin-top: 50px;
     padding: 20px 50px;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.68);
+    border: 1px solid rgba(0, 0, 0, 0.2);
   }
   
   .post .details .item .item-title{
@@ -102,7 +102,8 @@
   
   @media screen and (max-width: 768px) {
     .post .container  {
-      margin: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
     }
     .post .container .head{
         padding: 10px 20px 30px;

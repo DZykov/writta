@@ -88,6 +88,19 @@ export default async function Treasure({ params }: { params: { article: string }
                     </div>
                 </div>
             </div>
+
+            <div className="max-w-[1000px] mx-auto">
+                <div className="relative flex flex-row w-fit h-fit ml-auto mx-4">
+                    <div className="rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none bg-slate-200 mx-4 p-4">
+                        <i className='bx bx-like h-[160] w-[160]' ></i>:11
+                    </div>
+                    <div className="rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none bg-slate-200 mx-4 p-4">
+                        <i className='bx bx-dislike h-[160] w-[160]' ></i>:8
+                    </div>
+                </div>
+
+            </div>
+
             <CommentsSection article={""} />
         </>
     );
