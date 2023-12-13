@@ -12,7 +12,18 @@ const CommentsSection = (str: { article: string }) => {
                     </h1>
                 </div>
 
-                <div className="relative flex w-full max-w-[900px] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none mx-auto bg-slate-200 p-4 m-4 h-fit">
+                <div className="relative flex flex-col w-full max-w-[900px] mx-auto bg-slate-100 rounded-xl p-3 m-3">
+                    <textarea placeholder="Your Comment" rows={4} className="p-3 m-2 rounded-xl"></textarea>
+                    <div className="flex w-full justify-between py-1.5">
+                        <div className="flex gap-2 ml-auto">
+                            <button className="rounded-md bg-sky-200 p-2 hover:bg-sky-300 mx-2">
+                                Post Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="relative flex w-full max-w-[900px] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none mx-auto bg-slate-100 p-4 m-4 h-fit">
                     <div className="relative flex items-start gap-4 pt-0 pb-2 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
                         <Identicon nickName={"USERNAME"} />
                         <div className="flex w-full flex-col gap-0.5">
@@ -38,12 +49,12 @@ const CommentsSection = (str: { article: string }) => {
                     </div>
                     <div className="flex flex-row ml-[125px]">
                         <div className="p-2">
-                            <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                            <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit hover:bg-sky-200 cursor-pointer rounded-xl p-1">
                                 <i className='bx bx-like' ></i>:12
                             </p>
                         </div>
                         <div className="p-2">
-                            <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                            <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit hover:bg-rose-200 cursor-pointer rounded-xl p-1">
                                 <i className='bx bx-dislike' ></i>:11
                             </p>
                         </div>
