@@ -13,8 +13,16 @@ export default async function User({ params }: { params: { user: string } }) {
 
                         <ProfileCard nickName={params.user} />
 
-                        <div className="max-w-[500px] mx-auto mt-8">
-                            <div className="flex bg-gray-50 hover:bg-gray-100 mx-4 shadow-lg cursor-pointer">
+                        <div className="mx-auto mt-8">
+                            <div className="flex bg-gray-50 hover:bg-gray-100 mx-auto mx-4 shadow-lg cursor-pointer max-w-[500px]">
+                                <div className="text-center mx-auto p-4">
+                                    <p><span className="font-semibold">Follow</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mx-auto mt-8">
+                            <div className="flex bg-gray-50 hover:bg-gray-100 mx-auto mx-4 shadow-lg cursor-pointer max-w-[500px]">
                                 <div className="text-center mx-auto p-4">
                                     <p><span className="font-semibold">Message</span></p>
                                 </div>

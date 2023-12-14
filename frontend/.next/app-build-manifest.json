@@ -98,6 +98,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(public)/search/layout.js"
+    ],
+    "/(public)/feed/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(public)/feed/page.js"
+    ],
+    "/(public)/feed/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(public)/feed/layout.js"
     ]
   }
 }

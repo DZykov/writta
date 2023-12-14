@@ -7,6 +7,7 @@ const ArticleCard = (str: { articleName: string }) => {
                     <div className=" bg-white  mx-auto shadow-lg rounded-lg hover:shadow-xl transition duration-200">
                         <img className="rounded-t-lg" src="https://images.unsplash.com/photo-1622495894307-93143fc57155" alt="" />
                         <div className="py-4 px-8">
+                            <p dir="rtl" className="text-sm">Tag1, Tag2, Tag2</p>
                             <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">
                                 {str.articleName}
                             </h1>

@@ -5,7 +5,7 @@ const ProfileCard = (str: { nickName: string }) => {
     return (
         <>
             <div className="flex flex-wrap items-center  justify-center  mt-4 mx-4">
-                <div className="container max-w-[500px] bg-white shadow-lg transform duration-200 easy-in-out">
+                <div className="container max-w-[500px]  bg-white shadow-lg transform duration-200 easy-in-out">
                     <div className="flex justify-center p-5">
                         <IdenticonLarge nickName={str.nickName} />
                     </div>

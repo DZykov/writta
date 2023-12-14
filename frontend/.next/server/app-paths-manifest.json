@@ -1,7 +1,9 @@
 {
-  "/(public)/[article]/page": "app/(public)/[article]/page.js",
   "/(public)/u/[user]/page": "app/(public)/u/[user]/page.js",
-  "/(private)/profile/page": "app/(private)/profile/page.js",
   "/(private)/chats/page": "app/(private)/chats/page.js",
-  "/(public)/search/page": "app/(public)/search/page.js"
+  "/(public)/search/page": "app/(public)/search/page.js",
+  "/(private)/settings/page": "app/(private)/settings/page.js",
+  "/(private)/profile/page": "app/(private)/profile/page.js",
+  "/(public)/feed/page": "app/(public)/feed/page.js",
+  "/(public)/[article]/page": "app/(public)/[article]/page.js"
 }
