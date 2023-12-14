@@ -1,3 +1,11 @@
+import EditorEngine from "./editor";
+
 export default function Editor() {
-    return <div>Editor</div>
+
+    return (
+        <>
+            <EditorEngine />
+        </>
+    );
+
 }

@@ -36,7 +36,7 @@ export default function Settings() {
                             <h1 className="mt-2 text-gray-900 font-bold text-2xl tracking-tight">
                                 {'Change bio'}
                             </h1>
-                            <textarea placeholder="Your Comment" rows={4} className="p-3 mt-2 rounded-xl"></textarea>
+                            <textarea placeholder="Your bio" rows={4} className="p-3 mt-2 rounded-xl"></textarea>
 
                             <input type="sumbit" defaultValue="Change bio" className="mt-4 px-4 py-2 rounded bg-sky-600 hover:bg-sky-400 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-sky-600 focus:ring-opacity-80 cursor-pointer" />
                         </div>

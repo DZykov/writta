@@ -6,16 +6,16 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(private)/profile/page": [
+    "/(public)/demo/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/(private)/profile/page.css",
-      "static/chunks/app/(private)/profile/page.js"
+      "static/css/app/(public)/demo/page.css",
+      "static/chunks/app/(public)/demo/page.js"
     ],
-    "/(private)/profile/layout": [
+    "/(public)/demo/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(private)/profile/layout.js"
+      "static/chunks/app/(public)/demo/layout.js"
     ],
     "/(public)/[article]/page": [
       "static/chunks/webpack.js",
@@ -28,56 +28,16 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(public)/[article]/layout.js"
     ],
-    "/(public)/login/page": [
+    "/(private)/editor/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(public)/login/page.js"
+      "static/css/app/(private)/editor/page.css",
+      "static/chunks/app/(private)/editor/page.js"
     ],
-    "/(public)/login/layout": [
+    "/(private)/editor/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(public)/login/layout.js"
-    ],
-    "/(public)/register/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/register/layout.js"
-    ],
-    "/(public)/register/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/register/page.js"
-    ],
-    "/(public)/u/[user]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/u/[user]/page.js"
-    ],
-    "/(public)/u/[user]/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/u/[user]/layout.js"
-    ],
-    "/(private)/settings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(private)/settings/page.js"
-    ],
-    "/(private)/settings/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(private)/settings/layout.js"
-    ],
-    "/(private)/article/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(private)/article/[id]/page.css",
-      "static/chunks/app/(private)/article/[id]/page.js"
-    ],
-    "/(private)/article/[id]/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(private)/article/[id]/layout.js"
+      "static/chunks/app/(private)/editor/layout.js"
     ],
     "/(private)/chats/page": [
       "static/chunks/webpack.js",
@@ -89,25 +49,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(private)/chats/layout.js"
     ],
-    "/(public)/search/page": [
+    "/(private)/settings/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(public)/search/page.js"
+      "static/chunks/app/(private)/settings/page.js"
     ],
-    "/(public)/search/layout": [
+    "/(private)/settings/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(public)/search/layout.js"
-    ],
-    "/(public)/feed/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/feed/page.js"
-    ],
-    "/(public)/feed/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(public)/feed/layout.js"
+      "static/chunks/app/(private)/settings/layout.js"
     ]
   }
 }
