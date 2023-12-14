@@ -1,5 +1,7 @@
 'use server'
 
+// API left
+
 import { cookies } from 'next/headers'
 
 export async function checkAuth() {
