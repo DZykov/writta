@@ -1,8 +1,7 @@
 {
-  "/not-found": "app/not-found.js",
-  "/(private)/profile/page": "app/(private)/profile/page.js",
   "/(public)/login/page": "app/(public)/login/page.js",
   "/(public)/register/page": "app/(public)/register/page.js",
   "/(public)/[article]/page": "app/(public)/[article]/page.js",
-  "/(public)/u/[user]/page": "app/(public)/u/[user]/page.js"
+  "/(public)/u/[user]/page": "app/(public)/u/[user]/page.js",
+  "/(private)/settings/page": "app/(private)/settings/page.js"
 }

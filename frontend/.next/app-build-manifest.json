@@ -58,10 +58,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(public)/u/[user]/layout.js"
     ],
-    "/not-found": [
+    "/(private)/settings/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/chunks/app/(private)/settings/page.js"
+    ],
+    "/(private)/settings/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(private)/settings/layout.js"
     ]
   }
 }
