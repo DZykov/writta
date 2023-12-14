@@ -78,6 +78,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(private)/article/[id]/layout.js"
+    ],
+    "/(private)/chats/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(private)/chats/page.js"
+    ],
+    "/(private)/chats/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(private)/chats/layout.js"
     ]
   }
 }

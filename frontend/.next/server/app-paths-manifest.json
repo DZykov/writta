@@ -2,6 +2,6 @@
   "/(public)/login/page": "app/(public)/login/page.js",
   "/(public)/[article]/page": "app/(public)/[article]/page.js",
   "/(public)/u/[user]/page": "app/(public)/u/[user]/page.js",
-  "/(private)/article/[id]/page": "app/(private)/article/[id]/page.js",
-  "/(private)/profile/page": "app/(private)/profile/page.js"
+  "/(private)/profile/page": "app/(private)/profile/page.js",
+  "/(private)/chats/page": "app/(private)/chats/page.js"
 }

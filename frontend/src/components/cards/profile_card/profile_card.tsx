@@ -18,7 +18,7 @@ const ProfileCard = (str: { nickName: string }) => {
                             </p>
                         </div>
                         <hr className="mt-6" />
-                        <div className="flex  bg-gray-50 ">
+                        <div className="flex bg-gray-50 ">
                             <div className="text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer">
                                 <p><span className="font-semibold">15 </span> Articles</p>
                             </div>
