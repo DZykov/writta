@@ -422,8 +422,13 @@ export default function EditorEngine() {
                                     </div>
 
                                     <div className="mt-10 relative flex flex-row place-items-center">
+                                        <input id="ArticlePhoto" type={'text'} name="password" className="peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-sky-600" placeholder="Article photo link" />
+                                        <label htmlFor="ArticlePhoto" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Photo link</label>
+                                    </div>
+
+                                    <div className="mt-10 relative flex flex-row place-items-center">
                                         <input id="ArticleTags" type={'text'} name="password" className="peer h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-sky-600" placeholder="Article tags" />
-                                        <label htmlFor="ArticleTags" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Article tags seperated by spaces</label>
+                                        <label htmlFor="ArticleTags" className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Tags seperated by spaces</label>
                                     </div>
 
                                     <input type="sumbit" defaultValue="Post article" className="mt-10 px-4 py-2 rounded bg-sky-600 hover:bg-sky-400 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-sky-600 focus:ring-opacity-80 cursor-pointer" />

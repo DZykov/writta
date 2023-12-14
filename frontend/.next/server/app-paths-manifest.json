@@ -1,6 +1,4 @@
 {
-  "/(public)/demo/page": "app/(public)/demo/page.js",
-  "/(private)/editor/page": "app/(private)/editor/page.js",
   "/(private)/chats/page": "app/(private)/chats/page.js",
-  "/(private)/settings/page": "app/(private)/settings/page.js"
+  "/(public)/[article]/page": "app/(public)/[article]/page.js"
 }
