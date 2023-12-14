@@ -67,6 +67,17 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(private)/settings/layout.js"
+    ],
+    "/(private)/article/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(private)/article/[id]/page.css",
+      "static/chunks/app/(private)/article/[id]/page.js"
+    ],
+    "/(private)/article/[id]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(private)/article/[id]/layout.js"
     ]
   }
 }
