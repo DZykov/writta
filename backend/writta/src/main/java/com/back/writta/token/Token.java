@@ -1,6 +1,6 @@
 package com.back.writta.token;
 
-import com.dzykov.user.User;
+import com.back.writta.user.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
