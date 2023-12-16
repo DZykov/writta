@@ -3,7 +3,9 @@ package com.back.writta.auth;
 import com.back.writta.config.JwtService;
 import com.back.writta.token.Token;
 import com.back.writta.token.TokenRepository;
+import com.back.writta.token.TokenType;
 import com.back.writta.user.Role;
+import com.back.writta.user.User;
 import com.back.writta.user.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,28 +18,20 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
     private final UserRepository repository;
     private final TokenRepository tokenRepository;
-    private final CartsRepository cartRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder()
-                .firstname(request.getFirstname())
-                .lastname(request.getLastname())
-                .email(request.getEmail().toLowerCase())
-                .street(request.getStreet())
-                .city(request.getCity())
-                .country(request.getCountry())
-                .postalCode(request.getPostalCode().toUpperCase())
+                .username(request.getUsername())
+                .bio(request.getBio())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .nonLocked(true)
@@ -48,13 +42,8 @@ public class AuthenticationService {
 
     public AuthenticationResponse create(RegisterRequest request) {
         var user = User.builder()
-                .firstname(request.getFirstname())
-                .lastname(request.getLastname())
-                .email(request.getEmail())
-                .street(request.getStreet())
-                .city(request.getCity())
-                .country(request.getCountry())
-                .postalCode(request.getPostalCode().toUpperCase())
+                .username(request.getUsername())
+                .bio(request.getBio())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole())
                 .enabled(true)
@@ -65,7 +54,6 @@ public class AuthenticationService {
 
     private AuthenticationResponse saveRequestUser(User user) {
         var savedUser = repository.save(user);
-        saveUserCart(savedUser);
         var jwtToken = jwtService.generateToken(user);
         var refreshToken = jwtService.generateRefreshToken(user);
         saveUserToken(savedUser, jwtToken);
@@ -92,15 +80,6 @@ public class AuthenticationService {
                 .accessToken(jwtToken)
                 .refreshToken(refreshToken)
                 .build();
-    }
-
-    private void saveUserCart(User user) {
-        List<Integer> list = new ArrayList<>();
-        var cart = Carts.builder()
-                .user(user)
-                .itemsId(list)
-                .build();
-        cartRepository.save(cart);
     }
 
     private void saveUserToken(User user, String jwtToken) {
