@@ -9,8 +9,16 @@ import lombok.*;
 import java.util.Date;
 import java.util.List;
 
-
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Chat {
 
+    @Id
+    @GeneratedValue
+    private Integer id;
 
+    private String msg;
 }

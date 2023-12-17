@@ -1,5 +1,7 @@
 package com.back.writta.user;
 
+import com.back.writta.article.ArticleRepository;
+import com.back.writta.comment.CommentRepository;
 import com.back.writta.token.Token;
 import com.back.writta.token.TokenRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +19,8 @@ public class UserService {
     private final UserRepository userRepository;
     private final TokenRepository tokenRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ArticleRepository articleRepository;
+    private final CommentRepository commentRepository;
 
     public User createEmptyUser() {
         User u = User.builder().build();
@@ -68,8 +72,8 @@ public class UserService {
 
         var validUserTokens = revokeAllUserTokensByUserId(id);
         tokenRepository.deleteAll(validUserTokens);
-        // TODO: article, comments
-        // Should be deleted last, carts and token tables have user id key as foreign
+        articleRepository.deleteArticlesByUserId(id);
+        commentRepository.deleteCommentsByUserId(id);
         userRepository.deleteUserById(id);
 
         return createEmptyUser();

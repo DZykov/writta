@@ -24,7 +24,12 @@ import java.util.Set;
 @Entity
 @Table(name = "users")
 @JsonIgnoreProperties(value = {
-        "password"
+        "password",
+        "role",
+        "tokens",
+        "enabled",
+        "non_locked",
+        "comments",
 })
 public class User implements UserDetails {
 
